@@ -62,7 +62,7 @@ Die Ausgabe des Skripts enthält Informationen zur Leistung jeder Handelsstrateg
 
 ## Einfaches neuronales Netzwerk zur Handschriften-Erkennung
 
-Dieses Python-Skript implementiert ein einfaches künstliches neuronales Netzwerk zur Klassifizierung von Bildern aus dem MNIST-Datensatz von handschriftlichen Ziffern. 
+Das Python-Skript **NeuronalesNetzAbgabe** implementiert ein einfaches künstliches neuronales Netzwerk zur Klassifizierung von Bildern aus dem MNIST-Datensatz von handschriftlichen Ziffern. 
 
 ### Code-Struktur
 
