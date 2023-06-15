@@ -52,8 +52,7 @@ Außerdem muss eine Excel-Datei mit historischen DAX-Daten verfügbar sein. Dies
 
 ### Nutzung
 
-Stellen Sie sicher, dass alle benötigten Bibliotheken installiert sind und die DAX-Daten in der gleichen Verzeichnisebene wie das Skript vorliegen. Anschließend kann das Skript einfach ausgeführt werden. Die Ergebnisse der Handelsstrategien werden in der Konsole ausgegeben.
-
+Es sollte sichergestellt werden, dass alle benötigten Bibliotheken installiert wurden und die DAX-Daten in der gleichen Verzeichnisebene wie das Skript vorliegen. Anschließend kann das Skript einfach ausgeführt werden. Die Ergebnisse der Handelsstrategien werden in der Konsole ausgegeben.
 Die Handelsstrategien können angepasst oder erweitert werden, indem Sie weitere Bedingungen für das Array `investiert` definieren und diese in die Funktion `strategie()` einfügen.
 
 ### Ausgabe
@@ -86,6 +85,28 @@ Das Training des Netzwerks erfolgt durch die Methode `train`. Sie nimmt eine Lis
 
 Die Abfrage des Netzwerks erfolgt durch die Methode `query`. Sie nimmt eine Liste von Inputs entgegen und liefert die Ausgaben des Netzwerks für diese Inputs.
 
-### Training und Testing des Netzwerks
+#### Training und Testing des Netzwerks
 
 Nachdem das Netzwerk erstellt wurde, wird es auf der Grundlage eines Teils des MNIST-Datensatzes trainiert. Dann wird es mit einem anderen Teil des Datensatzes getestet, und die Leistung des Netzwerks wird anhand der Übereinstimmung zwischen den Netzwerkausgaben und den tatsächlichen Labels der Testdaten bewertet.
+
+## Aktienvolumenvorhersage für die VW-Aktie
+
+Das Skript **VW-Volumen-Prognose-Abgabe** verwendet Maschinelles Lernen, um das Volumen der VW-Aktie vorherzusagen. Es nutzt sowohl ein Gradient Boosting Modell als auch ein Neuronales Netzwerk (MLP Regressor) für die Vorhersage.
+
+### Funktionsweise des Skripts
+
+1. **Datenimport und -bereinigung**: Das Skript beginnt mit dem Importieren der Daten aus einer CSV-Datei und führt dann mehrere Reinigungsschritte durch. Die Reinigung umfasst das Entfernen von Zeilen mit fehlenden oder gleichen Volumen-, Close- und Adj Close-Werten. Zudem werden Ausreißer auf Grundlage des Z-Scores identifiziert und entfernt.
+
+2. **Daten-Transformation**: Danach werden die 'Volume' und 'Adj Close' Daten durch eine Z-Transformation standardisiert. Der Close-Wert wird logarithmiert und ebenfalls standardisiert, um den Einfluss von Ausreißern zu reduzieren.
+
+3. **Feature Engineering**: Anschließend werden neue Merkmale erstellt, indem das Volumen für verschiedene Zeitfenster verschoben wird.
+
+4. **Aufteilen der Daten**: Die Daten werden in ein Trainings- und ein Testset aufgeteilt. Das Trainingsset enthält alle Daten bis zum 31.08.2016, während das Testset alle Daten ab dem 01.09.2016 enthält.
+
+5. **Modelltraining und -auswertung**: Schließlich werden zwei Modelle, ein Gradient Boosting Regressor und ein Neuronales Netzwerk, trainiert und evaluiert. Die Genauigkeit der Modelle wird auf den Trainings- und Testdaten berechnet und ausgegeben.
+
+### Verwendete Modelle
+
+1. **Gradient Boosting Regressor**: Dieses Modell ist eine Art von Ensemble-Lernmethode, die mehrere schwache Vorhersagemodelle in ein einziges starkes Modell kombiniert. In diesem Fall wird das Modell mit einer maximalen Tiefe von 5, einer Mindestanzahl von 150 Samples für einen Split und 30 Samples für ein Blatt sowie einer Lernrate von 0,09 trainiert.
+
+2. **MLP Regressor**: MLP steht für "Multilayer Perceptron", eine Art von neuronalem Netzwerk. In diesem Fall wird das MLP auf den gleichen Daten trainiert wie der Gradient Boosting Regressor. Die maximale Anzahl von Iterationen für das MLP ist auf 500 eingestellt.
