@@ -21,7 +21,7 @@ Das Skript kann ausgeführt werden, ohne dass Parameter übergeben werden müsse
 
 ## DAX Handelsstrategie Analyse
 
-Das Python-Skript **HandelsStrategieHA** analysiert historische DAX-Daten und implementiert mehrere Handelsstrategien, um deren Leistung zu bewerten.
+Das Python-Skript **HandelsStrategieHA.py** analysiert historische DAX-Daten und implementiert mehrere Handelsstrategien, um deren Leistung zu bewerten.
 
 ### Funktionsweise
 
@@ -61,7 +61,7 @@ Die Ausgabe des Skripts enthält Informationen zur Leistung jeder Handelsstrateg
 
 ## Einfaches neuronales Netzwerk zur Handschriften-Erkennung
 
-Das Python-Skript **NeuronalesNetzAbgabe** implementiert ein einfaches künstliches neuronales Netzwerk zur Klassifizierung von Bildern aus dem MNIST-Datensatz von handschriftlichen Ziffern. 
+Das Python-Skript **NeuronalesNetzAbgabe.py** implementiert ein einfaches künstliches neuronales Netzwerk zur Klassifizierung von Bildern aus dem MNIST-Datensatz von handschriftlichen Ziffern. 
 
 ### Code-Struktur
 
@@ -91,7 +91,7 @@ Nachdem das Netzwerk erstellt wurde, wird es auf der Grundlage eines Teils des M
 
 ## Aktienvolumenvorhersage für die VW-Aktie
 
-Das Skript **VW-Volumen-Prognose-Abgabe** verwendet Maschinelles Lernen, um das Volumen der VW-Aktie vorherzusagen. Es nutzt sowohl ein Gradient Boosting Modell als auch ein Neuronales Netzwerk (MLP Regressor) für die Vorhersage.
+Das Skript **VW-Volumen-Prognose-Abgabe.py** verwendet Maschinelles Lernen, um das Volumen der VW-Aktie vorherzusagen. Es nutzt sowohl ein Gradient Boosting Modell als auch ein Neuronales Netzwerk (MLP Regressor) für die Vorhersage.
 
 ### Funktionsweise des Skripts
 
