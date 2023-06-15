@@ -3,7 +3,7 @@ Ein Auszug aus älteren Datenanalyse Projekten während meines Bachelorstudiums
 
 ## Monte Carlo Simulation für Knock-Out-Optionen
 
-Das Python-Skript **BewertungAktienKnockoutSimulation** verwendet die Monte Carlo Simulation, um den erwarteten Preis einer Knock-Out-Option zu ermitteln.
+Das Python-Skript **BewertungAktienKnockoutSimulationOpt.py** verwendet die Monte Carlo Simulation, um den erwarteten Preis einer Knock-Out-Option zu ermitteln.
 
 ### Funktionsweise
 
