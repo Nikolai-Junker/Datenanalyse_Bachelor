@@ -59,3 +59,33 @@ Die Handelsstrategien können angepasst oder erweitert werden, indem Sie weitere
 ### Ausgabe
 
 Die Ausgabe des Skripts enthält Informationen zur Leistung jeder Handelsstrategie, wie z.B. die Anzahl der Tage, an denen investiert wurde, den durchschnittlichen logarithmierten Return an diesen Tagen und den hypothetischen Endwert einer ursprünglichen Investition von 1.000 Euro. Zusätzlich werden potenzielle Transaktionskosten berücksichtigt.
+
+## Einfaches neuronales Netzwerk zur Handschriften-Erkennung
+
+Das Python-Skript **NeuronalesNetzAbgabe** implementiert ein einfaches künstliches neuronales Netzwerk zur Klassifizierung von Bildern aus dem MNIST-Datensatz von handschriftlichen Ziffern. 
+
+### Code-Struktur
+
+#### Sigmoid-Funktion
+
+Die Sigmoid-Funktion wird als Aktivierungsfunktion für die Neuronen im Netzwerk verwendet. Sie wandelt die Eingaben der Neuronen (gewichtete Summe der Inputs) in Werte zwischen 0 und 1 um.
+
+#### Neuronales Netzwerk-Klasse
+
+Die Hauptklasse in diesem Skript ist die `neuralNetwork`-Klasse. Sie stellt das neuronale Netzwerk dar und enthält Methoden zum Trainieren (`train`) und Abfragen (`query`) des Netzwerks. 
+
+#### Netzwerk-Initialisierung
+
+Die Netzwerk-Initialisierung erfolgt im Konstruktor der `neuralNetwork`-Klasse. Hier werden die Anzahl der Knoten in jeder Schicht (Eingabe-, versteckte, Ausgabe-Schicht), die Gewichtsmatrizen zwischen den Schichten und die Lernrate festgelegt. 
+
+#### Netzwerk-Training
+
+Das Training des Netzwerks erfolgt durch die Methode `train`. Sie nimmt eine Liste von Inputs und eine Liste von erwarteten Outputs (Targets) entgegen. Sie berechnet dann die Ausgaben des Netzwerks für die gegebenen Eingaben und aktualisiert die Gewichtsmatrizen basierend auf den Fehlern der Netzwerkausgaben im Vergleich zu den erwarteten Ausgaben.
+
+#### Netzwerk-Abfrage
+
+Die Abfrage des Netzwerks erfolgt durch die Methode `query`. Sie nimmt eine Liste von Inputs entgegen und liefert die Ausgaben des Netzwerks für diese Inputs.
+
+### Training und Testing des Netzwerks
+
+Nachdem das Netzwerk erstellt wurde, wird es auf der Grundlage eines Teils des MNIST-Datensatzes trainiert. Dann wird es mit einem anderen Teil des Datensatzes getestet, und die Leistung des Netzwerks wird anhand der Übereinstimmung zwischen den Netzwerkausgaben und den tatsächlichen Labels der Testdaten bewertet.
